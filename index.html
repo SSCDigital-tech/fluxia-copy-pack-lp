@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FluxIA Copy Pack — 77 Prompts de Copy para Claude</title>
+  <meta name="description" content="77 prompts prontos de copywriting para usar no Claude. Captions, emails, anúncios, roteiros e muito mais. Comece a gerar copy profissional em minutos." />
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1646840569956144');
+    fbq('track','PageView',{content_name:'FluxIA Copy Pack',content_category:'order_bump'});
+  </script>
+
+  <style>
+    :root {
+      --bg: #080810;
+      --bg2: #0e0e1a;
+      --bg3: #13131f;
+      --border: rgba(255,255,255,0.07);
+      --purple: #8b5cf6;
+      --purple-light: #a78bfa;
+      --purple-dark: #6d28d9;
+      --pink: #ec4899;
+      --text: #f1f0ff;
+      --muted: #8b8aab;
+      --radius: 16px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(32px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-12px); }
+    }
+    @keyframes pulse-ring {
+      0%   { box-shadow: 0 0 0 0 rgba(139,92,246,0.4); }
+      70%  { box-shadow: 0 0 0 20px rgba(139,92,246,0); }
+      100% { box-shadow: 0 0 0 0 rgba(139,92,246,0); }
+    }
+    @keyframes gradient-x {
+      0%, 100% { background-position: 0% 50%; }
+      50%       { background-position: 100% 50%; }
+    }
+    @keyframes shimmer {
+      0%   { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    @keyframes count-up {
+      from { opacity: 0; transform: scale(0.8); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    @keyframes ticker {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      background: linear-gradient(90deg, var(--purple-dark), #6366f1, var(--purple-dark));
+      background-size: 200% 100%;
+      animation: gradient-x 4s ease infinite;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+    .topbar span { opacity: 0.9; margin: 0 8px; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(8,8,16,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s;
+    }
+    .logo {
+      font-size: 18px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--purple-light), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .nav-cta {
+      background: var(--purple);
+      color: #fff;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      animation: pulse-ring 2.5s ease infinite;
+    }
+    .nav-cta:hover { background: var(--purple-light); transform: scale(1.04); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(139,92,246,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(99,102,241,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 80% 80%, rgba(236,72,153,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    /* grid lines */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(139,92,246,0.12);
+      border: 1px solid rgba(139,92,246,0.3);
+      border-radius: 50px;
+      padding: 6px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--purple-light);
+      margin-bottom: 28px;
+      animation: fadeUp 0.6s ease both;
+    }
+    .hero-badge .dot {
+      width: 6px; height: 6px;
+      background: var(--purple-light);
+      border-radius: 50%;
+      animation: pulse-ring 2s ease infinite;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 72px);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+      animation: fadeUp 0.7s ease 0.1s both;
+    }
+    .hero h1 .gradient {
+      background: linear-gradient(135deg, var(--purple-light) 0%, var(--pink) 50%, #f59e0b 100%);
+      background-size: 200% 200%;
+      animation: gradient-x 5s ease infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      animation: fadeUp 0.7s ease 0.2s both;
+    }
+
+    .hero-cta-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      animation: fadeUp 0.7s ease 0.3s both;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--purple-dark), var(--purple));
+      color: #fff;
+      font-size: 17px;
+      font-weight: 800;
+      padding: 18px 40px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 40px rgba(139,92,246,0.35);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      animation: shimmer 2.5s ease infinite;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 0 60px rgba(139,92,246,0.55);
+    }
+    .hero-guarantee {
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ── TICKER ── */
+    .ticker-wrap {
+      overflow: hidden;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+    .ticker-inner {
+      display: flex;
+      gap: 48px;
+      white-space: nowrap;
+      animation: ticker 30s linear infinite;
+      width: max-content;
+    }
+    .ticker-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .ticker-item .icon { color: var(--purple-light); }
+
+    /* ── SECTIONS ── */
+    section { padding: 100px 24px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--purple-light);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 560px;
+    }
+
+    /* ── PAIN ── */
+    .pain-section { background: var(--bg2); }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 56px;
+    }
+    .pain-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .pain-card:hover {
+      border-color: rgba(139,92,246,0.3);
+      transform: translateY(-4px);
+    }
+    .pain-icon { font-size: 28px; margin-bottom: 14px; }
+    .pain-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .pain-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    /* ── WHAT IS IT ── */
+    .product-visual {
+      position: relative;
+      background: linear-gradient(135deg, var(--bg3), var(--bg2));
+      border: 1px solid rgba(139,92,246,0.25);
+      border-radius: 24px;
+      padding: 40px;
+      overflow: hidden;
+      animation: float 6s ease-in-out infinite;
+    }
+    .product-visual::before {
+      content: '';
+      position: absolute;
+      top: -40%; right: -20%;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(139,92,246,0.2), transparent 70%);
+      pointer-events: none;
+    }
+    .product-tag {
+      display: inline-block;
+      background: rgba(139,92,246,0.15);
+      border: 1px solid rgba(139,92,246,0.3);
+      color: var(--purple-light);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .product-title-big {
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+    .product-desc {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+    .prompt-preview {
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 20px;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.7;
+      color: #c4b5fd;
+    }
+    .prompt-preview .label {
+      font-family: system-ui;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .prompt-preview .var { color: #fbbf24; }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
+
+    /* ── CATEGORIES ── */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 56px;
+    }
+    .cat-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      cursor: default;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .cat-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(139,92,246,0.06), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .cat-card:hover {
+      border-color: rgba(139,92,246,0.4);
+      box-shadow: 0 0 30px rgba(139,92,246,0.12);
+      transform: translateY(-4px);
+    }
+    .cat-card:hover::before { opacity: 1; }
+    .cat-number {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--purple-light);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .cat-icon { font-size: 32px; margin-bottom: 12px; }
+    .cat-card h3 { font-size: 17px; font-weight: 800; margin-bottom: 8px; }
+    .cat-card p { font-size: 14px; color: var(--muted); }
+    .cat-count {
+      display: inline-block;
+      background: rgba(139,92,246,0.15);
+      color: var(--purple-light);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 50px;
+      margin-top: 14px;
+    }
+
+    /* ── STEPS ── */
+    .steps-section { background: var(--bg2); }
+    .steps-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 64px;
+      position: relative;
+    }
+    .steps-row::before {
+      content: '';
+      position: absolute;
+      top: 40px; left: 15%; right: 15%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--purple), transparent);
+    }
+    @media (max-width: 768px) {
+      .steps-row { grid-template-columns: 1fr; }
+      .steps-row::before { display: none; }
+    }
+    .step {
+      text-align: center;
+      padding: 36px 24px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .step:hover { border-color: rgba(139,92,246,0.35); transform: translateY(-4px); }
+    .step-num {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple-dark), var(--purple));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; font-weight: 900;
+      margin: 0 auto 20px;
+      box-shadow: 0 0 24px rgba(139,92,246,0.4);
+    }
+    .step h3 { font-size: 18px; font-weight: 800; margin-bottom: 10px; }
+    .step p { font-size: 14px; color: var(--muted); }
+
+    /* ── EXAMPLES ── */
+    .examples-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 56px;
+    }
+    .example-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .example-card:hover { border-color: rgba(139,92,246,0.3); transform: translateY(-4px); }
+    .ex-header {
+      background: rgba(139,92,246,0.1);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .ex-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .ex-header span { font-size: 13px; font-weight: 700; color: var(--purple-light); }
+    .ex-body { padding: 20px; }
+    .ex-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .ex-text {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #d4d0f0;
+      background: rgba(0,0,0,0.3);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .ex-divider {
+      text-align: center;
+      font-size: 22px;
+      padding: 10px 0;
+      color: var(--purple);
+    }
+
+    /* ── FOR WHO ── */
+    .for-who-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .for-card {
+      background: rgba(139,92,246,0.07);
+      border: 1px solid rgba(139,92,246,0.2);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .for-card:hover {
+      background: rgba(139,92,246,0.12);
+      transform: translateY(-4px);
+    }
+    .for-icon { font-size: 32px; margin-bottom: 12px; }
+    .for-card h3 { font-size: 15px; font-weight: 800; color: var(--purple-light); }
+
+    /* ── PRICING ── */
+    .pricing-section { background: var(--bg2); }
+    .pricing-card {
+      max-width: 560px;
+      margin: 64px auto 0;
+      background: linear-gradient(135deg, var(--bg3), rgba(139,92,246,0.06));
+      border: 1px solid rgba(139,92,246,0.35);
+      border-radius: 28px;
+      padding: 48px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 0 80px rgba(139,92,246,0.12);
+    }
+    .pricing-badge {
+      position: absolute;
+      top: -16px; left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--purple-dark), var(--pink));
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 6px 20px;
+      border-radius: 50px;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    .price-anchor {
+      font-size: 18px;
+      color: var(--muted);
+      text-decoration: line-through;
+      margin-bottom: 6px;
+    }
+    .price-main {
+      font-size: 72px;
+      font-weight: 900;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--purple-light), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+    .price-note { font-size: 14px; color: var(--muted); margin-bottom: 32px; }
+    .includes-list {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 36px;
+    }
+    .includes-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+    }
+    .includes-list li:last-child { border-bottom: none; }
+    .includes-list .check { color: #4ade80; font-size: 16px; flex-shrink: 0; }
+    .includes-list .val {
+      margin-left: auto;
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: line-through;
+    }
+    .guarantee-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(74,222,128,0.06);
+      border: 1px solid rgba(74,222,128,0.2);
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+    .guarantee-box .icon { font-size: 28px; }
+    .guarantee-box h4 { font-size: 14px; font-weight: 800; color: #4ade80; }
+    .guarantee-box p { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+    /* ── FAQ ── */
+    .faq-list {
+      max-width: 700px;
+      margin: 56px auto 0;
+    }
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .faq-item:hover { border-color: rgba(139,92,246,0.3); }
+    .faq-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 700;
+      gap: 16px;
+      user-select: none;
+    }
+    .faq-arrow {
+      flex-shrink: 0;
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: rgba(139,92,246,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); background: var(--purple); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      padding: 0 24px;
+    }
+    .faq-item.open .faq-a { max-height: 300px; padding: 0 24px 20px; }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      text-align: center;
+      padding: 100px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(139,92,246,0.15), transparent);
+      pointer-events: none;
+    }
+    .final-cta h2 {
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .final-cta p {
+      font-size: 18px;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 40px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    footer a { color: var(--muted); text-decoration: none; margin: 0 12px; }
+    footer a:hover { color: var(--purple-light); }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 60px 24px;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-size: 40px;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--purple-light), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-label { font-size: 13px; color: var(--muted); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .pricing-card { padding: 36px 24px; }
+      .price-main { font-size: 56px; }
+      .steps-row { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="topbar">
+  ⚡ Oferta especial para compradores do FluxIA Skills Pack
+  <span>·</span>
+  Acesso imediato após a compra
+  <span>·</span>
+  Garantia de 7 dias
+</div>
+
+<!-- Nav -->
+<nav style="top: 40px;">
+  <div class="logo">FluxIA Copy Pack</div>
+  <a href="#pricing" class="nav-cta">Quero agora — R$27</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding-top: 160px;">
+  <div class="hero-badge">
+    <span class="dot"></span>
+    Novo produto SSCDigital — Claude + Copywriting
+  </div>
+
+  <h1>
+    Gere copy profissional<br />
+    em <span class="gradient">minutos com Claude</span>
+  </h1>
+
+  <p class="hero-sub">
+    77 prompts prontos de copywriting — captions, emails, anúncios, roteiros e muito mais.
+    Cole no Claude. Edite as variáveis. Receba seu copy pronto.
+  </p>
+
+  <div class="hero-cta-wrap">
+    <a href="#pricing" class="btn-primary">
+      🚀 Quero os 77 Prompts — R$27
+    </a>
+    <p class="hero-guarantee">🔒 Garantia de 7 dias · Acesso imediato</p>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <div class="ticker-item"><span class="icon">✍️</span>77 Prompts Prontos</div>
+    <div class="ticker-item"><span class="icon">⚡</span>Funciona com Claude</div>
+    <div class="ticker-item"><span class="icon">📱</span>Captions Instagram</div>
+    <div class="ticker-item"><span class="icon">📧</span>Emails de Venda</div>
+    <div class="ticker-item"><span class="icon">🎬</span>Roteiros Reels</div>
+    <div class="ticker-item"><span class="icon">📣</span>Anúncios Meta</div>
+    <div class="ticker-item"><span class="icon">💬</span>Copy WhatsApp</div>
+    <div class="ticker-item"><span class="icon">🎯</span>VSL Completa</div>
+    <div class="ticker-item"><span class="icon">✍️</span>77 Prompts Prontos</div>
+    <div class="ticker-item"><span class="icon">⚡</span>Funciona com Claude</div>
+    <div class="ticker-item"><span class="icon">📱</span>Captions Instagram</div>
+    <div class="ticker-item"><span class="icon">📧</span>Emails de Venda</div>
+    <div class="ticker-item"><span class="icon">🎬</span>Roteiros Reels</div>
+    <div class="ticker-item"><span class="icon">📣</span>Anúncios Meta</div>
+    <div class="ticker-item"><span class="icon">💬</span>Copy WhatsApp</div>
+    <div class="ticker-item"><span class="icon">🎯</span>VSL Completa</div>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat reveal">
+    <div class="stat-num">77</div>
+    <div class="stat-label">Prompts prontos para usar</div>
+  </div>
+  <div class="stat reveal">
+    <div class="stat-num">7</div>
+    <div class="stat-label">Categorias de copy</div>
+  </div>
+  <div class="stat reveal">
+    <div class="stat-num">5</div>
+    <div class="stat-label">Mega prompts bônus</div>
+  </div>
+  <div class="stat reveal">
+    <div class="stat-num">&lt;5min</div>
+    <div class="stat-label">Para gerar o primeiro copy</div>
+  </div>
+</div>
+
+<!-- PAIN -->
+<section class="pain-section">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">O problema</p>
+      <h2 class="section-title">Você passa horas escrevendo<br />e o resultado não converte?</h2>
+      <p class="section-sub">Escrever copy que vende é uma habilidade difícil. Mas com os prompts certos, o Claude faz o trabalho pesado por você.</p>
+    </div>
+
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <div class="pain-icon">⏱️</div>
+        <h3>Horas perdidas por caption</h3>
+        <p>Você abre o Claude sem saber o que pedir. Fica rodando em círculos e o resultado parece genérico demais para publicar.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-icon">📉</div>
+        <h3>Anúncios que não convertem</h3>
+        <p>O criativo fica bonito mas o texto não prende. CTR baixo, CPC alto e budget evaporando sem retorno real.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-icon">🤯</div>
+        <h3>Página em branco todo dia</h3>
+        <p>Email, roteiro, caption, anúncio — cada um exige um estilo diferente. Difícil manter consistência e qualidade ao mesmo tempo.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-icon">🔁</div>
+        <h3>Output genérico do Claude</h3>
+        <p>Quando você não sabe exatamente como instruir, o Claude entrega copy comum. O problema não é a IA — é a instrução.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS IT -->
+<section>
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal-left">
+        <p class="section-label">A solução</p>
+        <h2 class="section-title">Prompts que transformam o Claude em seu copywriter pessoal</h2>
+        <p style="color: var(--muted); font-size: 16px; line-height: 1.7; margin: 20px 0 28px;">
+          O FluxIA Copy Pack são 77 prompts de copywriting cuidadosamente estruturados para extrair o melhor do Claude em cada tipo de copy que seu negócio precisa.<br /><br />
+          Cada prompt tem: <strong style="color: var(--text);">instrução clara + variáveis editáveis + guia de uso.</strong> Você cola, preenche, e recebe copy profissional em segundos.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; align-items: center; gap: 12px; font-size: 15px;">
+            <span style="color: #4ade80; font-size: 18px;">✓</span>
+            Sem escrever do zero — só editar variáveis
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; font-size: 15px;">
+            <span style="color: #4ade80; font-size: 18px;">✓</span>
+            Copy no seu tom e para o seu nicho
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; font-size: 15px;">
+            <span style="color: #4ade80; font-size: 18px;">✓</span>
+            Funciona com qualquer produto ou serviço
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; font-size: 15px;">
+            <span style="color: #4ade80; font-size: 18px;">✓</span>
+            Acesso imediato — arquivo .md e .pdf
+          </div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="product-visual">
+          <div class="product-tag">Preview do produto</div>
+          <div class="product-title-big">Prompt #18</div>
+          <div class="product-desc">Email de Venda Direto (Hard Sell)</div>
+          <div class="prompt-preview">
+            <div class="label">Cole no Claude ↓</div>
+Escreva um email de venda direta para <span class="var">[SEU PRODUTO]</span>.
+
+Produto: <span class="var">[NOME]</span>
+Preço: <span class="var">[R$X]</span>
+Principal benefício: <span class="var">[O QUE RESOLVE]</span>
+Urgência: <span class="var">[PRAZO OU BÔNUS]</span>
+
+Estrutura: gancho → benefícios →
+prova social → oferta → CTA.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section style="background: var(--bg2);">
+  <div class="container">
+    <div class="reveal" style="text-align: center; margin-bottom: 0;">
+      <p class="section-label">O que está dentro</p>
+      <h2 class="section-title">77 prompts em 7 categorias</h2>
+      <p class="section-sub" style="margin: 0 auto;">Cada categoria resolve um tipo de copy que seu negócio precisa. Da caption ao email, do anúncio ao roteiro de VSL.</p>
+    </div>
+
+    <div class="categories-grid">
+      <div class="cat-card reveal">
+        <div class="cat-number">Categoria 01</div>
+        <div class="cat-icon">📱</div>
+        <h3>Captions Instagram</h3>
+        <p>Lançamento, storytelling, prova social, carrossel, oferta e muito mais.</p>
+        <span class="cat-count">15 prompts</span>
+      </div>
+      <div class="cat-card reveal">
+        <div class="cat-number">Categoria 02</div>
+        <div class="cat-icon">📧</div>
+        <h3>Email de Venda</h3>
+        <p>Welcome, nurture, hard sell, carrinho abandonado, urgência e upsell.</p>
+        <span class="cat-count">12 prompts</span>
+      </div>
+      <div class="cat-card reveal">
+        <div class="cat-number">Categoria 03</div>
+        <div class="cat-icon">🎯</div>
+        <h3>Headlines</h3>
+        <p>Para LP, anúncio Meta, YouTube, email, WhatsApp e muito mais.</p>
+        <span class="cat-count">10 prompts</span>
+      </div>
+      <div class="cat-card reveal">
+        <div class="cat-number">Categoria 04</div>
+        <div class="cat-icon">🎬</div>
+        <h3>Roteiros Reels & Stories</h3>
+        <p>Educacional, produto, prova social, bastidores e storytelling.</p>
+        <span class="cat-count">10 prompts</span>
+      </div>
+      <div class="cat-card reveal">
+        <div class="cat-number">Categoria 05</div>
+        <div class="cat-icon">📣</div>
+        <h3>Anúncios Meta</h3>
+        <p>Awareness, conversão, retargeting, carrossel, UGC e lookalike.</p>
+        <span class="cat-count">10 prompts</span>
+      </div>
+      <div class="cat-card reveal">
+        <div class="cat-number">Categoria 06</div>
+        <div class="cat-icon">🎥</div>
+        <h3>VSL & Carta de Vendas</h3>
+        <p>Gancho, dor, solução, prova, objeções, oferta, garantia e CTA.</p>
+        <span class="cat-count">10 prompts</span>
+      </div>
+      <div class="cat-card reveal">
+        <div class="cat-number">Categoria 07</div>
+        <div class="cat-icon">💬</div>
+        <h3>WhatsApp</h3>
+        <p>Primeiro contato, follow-up, fechamento, objeções e reativação.</p>
+        <span class="cat-count">10 prompts</span>
+      </div>
+      <div class="cat-card reveal" style="border-color: rgba(251,191,36,0.3); background: rgba(251,191,36,0.05);">
+        <div class="cat-number" style="color: #fbbf24;">Bônus</div>
+        <div class="cat-icon">⭐</div>
+        <h3>5 Mega Prompts</h3>
+        <p>Copy completa de LP, sequência de lançamento, script de reunião e mais.</p>
+        <span class="cat-count" style="background: rgba(251,191,36,0.15); color: #fbbf24;">5 mega prompts</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="steps-section">
+  <div class="container">
+    <div class="reveal" style="text-align: center;">
+      <p class="section-label">Como funciona</p>
+      <h2 class="section-title">3 passos para copy pronta</h2>
+    </div>
+    <div class="steps-row">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <h3>Acesse o arquivo</h3>
+        <p>Após a compra você recebe acesso imediato ao arquivo .md e .pdf com todos os 77 prompts organizados por categoria.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <h3>Cole no Claude</h3>
+        <p>Escolha o prompt da categoria que precisa. Cole no Claude e substitua as variáveis em <strong>[colchetes]</strong> com as informações do seu negócio.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <h3>Receba e publique</h3>
+        <p>O Claude entrega copy no seu tom, para o seu nicho, pronto para publicar. Ajuste o que quiser e está feito.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXAMPLES -->
+<section>
+  <div class="container">
+    <div class="reveal" style="text-align: center; margin-bottom: 0;">
+      <p class="section-label">Exemplos reais</p>
+      <h2 class="section-title">Veja o que o Claude entrega</h2>
+      <p class="section-sub" style="margin: 0 auto;">Outputs gerados com os prompts do FluxIA Copy Pack para diferentes segmentos.</p>
+    </div>
+
+    <div class="examples-grid" style="margin-top: 56px;">
+      <div class="example-card reveal">
+        <div class="ex-header">
+          <div class="ex-dot" style="background: #ef4444;"></div>
+          <div class="ex-dot" style="background: #fbbf24;"></div>
+          <div class="ex-dot" style="background: #4ade80;"></div>
+          <span>Prompt #01 — Caption Lançamento</span>
+        </div>
+        <div class="ex-body">
+          <div class="ex-label">Output gerado pelo Claude</div>
+          <div class="ex-text">
+            "Seis meses de trabalho.<br/>
+            E finalmente chegou o dia.<br/><br/>
+            O FluxIA Copy Pack está disponível agora — 77 prompts para você nunca mais travar na frente de uma página em branco...<br/><br/>
+            Se você já perdeu horas tentando escrever uma caption ou email que realmente converte, isso foi feito para você.<br/><br/>
+            👉 Link na bio para garantir o seu."
+          </div>
+        </div>
+      </div>
+
+      <div class="example-card reveal">
+        <div class="ex-header">
+          <div class="ex-dot" style="background: #ef4444;"></div>
+          <div class="ex-dot" style="background: #fbbf24;"></div>
+          <div class="ex-dot" style="background: #4ade80;"></div>
+          <span>Prompt #29 — Headline Meta Ads</span>
+        </div>
+        <div class="ex-body">
+          <div class="ex-label">10 opções geradas pelo Claude</div>
+          <div class="ex-text">
+            1. "77 prompts de copy para o Claude"<br/>
+            2. "Pare de travar na hora de escrever"<br/>
+            3. "Copy profissional em minutos"<br/>
+            4. "O Claude escreve. Você publica."<br/>
+            5. "Prompts que convertem de verdade"<br/>
+            <span style="color: var(--muted); font-size: 12px;">+ 5 mais incluídas no prompt...</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="example-card reveal">
+        <div class="ex-header">
+          <div class="ex-dot" style="background: #ef4444;"></div>
+          <div class="ex-dot" style="background: #fbbf24;"></div>
+          <div class="ex-dot" style="background: #4ade80;"></div>
+          <span>Prompt #68 — WhatsApp Lead</span>
+        </div>
+        <div class="ex-body">
+          <div class="ex-label">Mensagem gerada pelo Claude</div>
+          <div class="ex-text">
+            "Oi [Nome]! 👋<br/><br/>
+            Vi que você pediu informações sobre o Copy Pack.<br/><br/>
+            Te mando o link agora — mas antes me conta: qual é o maior desafio no seu copy hoje? Caption, email ou anúncio?<br/><br/>
+            Pergunto porque tenho prompts específicos para cada um 😉"
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHO -->
+<section style="background: var(--bg2);">
+  <div class="container">
+    <div class="reveal" style="text-align: center;">
+      <p class="section-label">Para quem é</p>
+      <h2 class="section-title">Ideal para quem precisa de<br/>copy que funciona rápido</h2>
+    </div>
+    <div class="for-who-grid">
+      <div class="for-card reveal">
+        <div class="for-icon">🛍️</div>
+        <h3>Lojistas e e-commerces</h3>
+      </div>
+      <div class="for-card reveal">
+        <div class="for-icon">🎓</div>
+        <h3>Infoprodutores</h3>
+      </div>
+      <div class="for-card reveal">
+        <div class="for-icon">📊</div>
+        <h3>Gestores de tráfego</h3>
+      </div>
+      <div class="for-card reveal">
+        <div class="for-icon">✍️</div>
+        <h3>Copywriters e redatores</h3>
+      </div>
+      <div class="for-card reveal">
+        <div class="for-icon">🏢</div>
+        <h3>Agências digitais</h3>
+      </div>
+      <div class="for-card reveal">
+        <div class="for-icon">📱</div>
+        <h3>Criadores de conteúdo</h3>
+      </div>
+      <div class="for-card reveal">
+        <div class="for-icon">💼</div>
+        <h3>Consultores e coaches</h3>
+      </div>
+      <div class="for-card reveal">
+        <div class="for-icon">🚀</div>
+        <h3>Empreendedores digitais</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="reveal" style="text-align: center;">
+      <p class="section-label">Oferta</p>
+      <h2 class="section-title">Investimento único,<br/>uso para sempre</h2>
+    </div>
+
+    <div class="pricing-card reveal">
+      <div class="pricing-badge">🔥 Oferta especial — compradores FluxIA</div>
+
+      <div class="price-anchor">De R$97</div>
+      <div class="price-main">R$27</div>
+      <div class="price-note">Pagamento único · Acesso imediato · Sem mensalidade</div>
+
+      <ul class="includes-list">
+        <li>
+          <span class="check">✓</span>
+          <span>77 Prompts de Copy completos</span>
+          <span class="val">R$47</span>
+        </li>
+        <li>
+          <span class="check">✓</span>
+          <span>7 categorias (Instagram, Email, Headlines, Reels, Meta Ads, VSL, WhatsApp)</span>
+          <span class="val">R$37</span>
+        </li>
+        <li>
+          <span class="check">✓</span>
+          <span>5 Mega Prompts bônus (LP completa, sequência de lançamento e mais)</span>
+          <span class="val">R$27</span>
+        </li>
+        <li>
+          <span class="check">✓</span>
+          <span>Arquivo .md e .pdf — abre em qualquer dispositivo</span>
+          <span class="val">—</span>
+        </li>
+        <li>
+          <span class="check">✓</span>
+          <span>Guia de uso — como extrair o máximo de cada prompt</span>
+          <span class="val">R$17</span>
+        </li>
+      </ul>
+
+      <div class="guarantee-box">
+        <div class="icon">🛡️</div>
+        <div>
+          <h4>Garantia de 7 dias</h4>
+          <p>Se não gostar por qualquer motivo, devolvemos 100% do valor. Sem perguntas.</p>
+        </div>
+      </div>
+
+      <a href="LINK_KIWIFY_AQUI" class="btn-primary" style="width: 100%; justify-content: center; font-size: 18px; padding: 20px;"
+        onclick="fbq && fbq('track','InitiateCheckout',{value:27,currency:'BRL',content_name:'FluxIA Copy Pack'})">
+        🚀 Quero o FluxIA Copy Pack — R$27
+      </a>
+      <p style="font-size: 13px; color: var(--muted); margin-top: 14px;">
+        🔒 Pagamento seguro via Kiwify · Pix, cartão ou boleto
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container">
+    <div class="reveal" style="text-align: center;">
+      <p class="section-label">Dúvidas</p>
+      <h2 class="section-title">Perguntas frequentes</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-q">
+          Precisa ter o FluxIA Skills Pack para usar?
+          <span class="faq-arrow">▾</span>
+        </div>
+        <div class="faq-a">
+          Não. Os prompts funcionam com qualquer plano do Claude (gratuito ou Pro). O FluxIA Skills Pack é complementar — quem tem os dois tem o ecossistema completo, mas um não depende do outro.
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <div class="faq-q">
+          Como vou receber o produto?
+          <span class="faq-arrow">▾</span>
+        </div>
+        <div class="faq-a">
+          Imediatamente após a compra, você recebe o link de acesso no email cadastrado. O produto é um arquivo .md (abre no Claude, Notion, VS Code, qualquer editor de texto) e .pdf. Nada para instalar.
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <div class="faq-q">
+          Funciona para qualquer nicho?
+          <span class="faq-arrow">▾</span>
+        </div>
+        <div class="faq-a">
+          Sim. Todos os prompts têm variáveis editáveis — você informa seu produto, público e nicho, e o Claude adapta o copy para a sua realidade. Funciona para serviços, produtos físicos, infoprodutos, SaaS e qualquer segmento.
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <div class="faq-q">
+          E se eu não gostar?
+          <span class="faq-arrow">▾</span>
+        </div>
+        <div class="faq-a">
+          Você tem 7 dias de garantia incondicional. Se não gostar por qualquer motivo — ou sem razão nenhuma — é só entrar em contato e devolvemos 100% do valor. Sem burocracia.
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <div class="faq-q">
+          Os prompts são atualizados?
+          <span class="faq-arrow">▾</span>
+        </div>
+        <div class="faq-a">
+          O arquivo entregue é a versão 1.0. Eventuais atualizações maiores podem ser lançadas como novo produto. Quem comprar agora leva esta versão completa com acesso permanente.
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <div class="faq-q">
+          Funciona com o Claude gratuito?
+          <span class="faq-arrow">▾</span>
+        </div>
+        <div class="faq-a">
+          Sim, funciona com o plano gratuito do Claude. Para uso intenso (muitos prompts por dia), o Claude Pro oferece limites maiores — mas não é obrigatório para começar a usar o pack.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+  <h2 class="reveal">Pronto para ter copy<br /><span style="background: linear-gradient(135deg, var(--purple-light), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">profissional em minutos?</span></h2>
+  <p class="reveal">77 prompts prontos. Cole no Claude. Publique amanhã.</p>
+  <a href="#pricing" class="btn-primary reveal"
+    onclick="fbq && fbq('track','InitiateCheckout',{value:27,currency:'BRL',content_name:'FluxIA Copy Pack'})">
+    🚀 Garantir meu FluxIA Copy Pack — R$27
+  </a>
+  <p class="reveal" style="font-size: 13px; color: var(--muted); margin-top: 16px;">
+    🛡️ Garantia de 7 dias · Acesso imediato · Pagamento seguro
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div style="margin-bottom: 16px;">
+    <a href="/termos">Termos de Uso</a>
+    <a href="/privacidade">Privacidade</a>
+    <a href="mailto:suporte@sscdigital.com">Suporte</a>
+  </div>
+  <p>© 2026 SSCDigital · FluxIA Copy Pack · Todos os direitos reservados</p>
+  <p style="margin-top: 8px; font-size: 12px; opacity: 0.6;">
+    Este produto é um arquivo digital de uso imediato. Resultados variam conforme uso e contexto de cada negócio.
+  </p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Stagger reveals in grid
+  document.querySelectorAll('.pain-grid .pain-card, .categories-grid .cat-card, .for-who-grid .for-card').forEach((el, i) => {
+    el.style.transitionDelay = `${i * 0.08}s`;
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Pixel InitiateCheckout on CTA click
+  document.querySelectorAll('a[href="#pricing"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (window.fbq) fbq('track', 'InitiateCheckout', {
+        value: 27, currency: 'BRL', content_name: 'FluxIA Copy Pack'
+      });
+    });
+  });
+</script>
+</body>
+</html>
