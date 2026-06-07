@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compra Confirmada — FluxIA Copy Pack</title>
+  <meta name="description" content="Sua compra do FluxIA Copy Pack foi confirmada. Veja como acessar seus 77 prompts agora mesmo." />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Meta Pixel — mesmo pixel do FluxIA Skills Pack. Evento Purchase identificado por content_name + content_ids únicos do Copy Pack -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1646840569956144');
+    fbq('track','PageView',{content_name:'FluxIA Copy Pack — Obrigado',content_category:'thank_you_page'});
+    fbq('track','Purchase',{
+      value: 27,
+      currency: 'BRL',
+      content_name: 'FluxIA Copy Pack',
+      content_category: 'order_bump',
+      content_ids: ['fluxia-copy-pack'],
+      content_type: 'product'
+    });
+  </script>
+
+  <style>
+    :root {
+      --bg: #080810;
+      --bg2: #0e0e1a;
+      --bg3: #13131f;
+      --border: rgba(255,255,255,0.07);
+      --purple: #8b5cf6;
+      --purple-light: #a78bfa;
+      --purple-dark: #6d28d9;
+      --green: #4ade80;
+      --pink: #ec4899;
+      --text: #f1f0ff;
+      --muted: #8b8aab;
+      --radius: 16px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+    @keyframes pulse-ring {
+      0%   { box-shadow: 0 0 0 0 rgba(74,222,128,0.4); }
+      70%  { box-shadow: 0 0 0 24px rgba(74,222,128,0); }
+      100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+    }
+    @keyframes fadeUp { from { opacity:0; transform: translateY(28px);} to { opacity:1; transform: translateY(0);} }
+    @keyframes gradient-x { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+    @keyframes confetti-fall {
+      0%   { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(540deg); opacity: 0; }
+    }
+
+    .glow {
+      position: absolute; border-radius: 50%; filter: blur(90px); z-index: 0; pointer-events:none;
+    }
+    .glow-1 { width: 480px; height: 480px; background: radial-gradient(circle, rgba(139,92,246,0.28), transparent 70%); top: -160px; left: -120px; animation: float 9s ease-in-out infinite; }
+    .glow-2 { width: 420px; height: 420px; background: radial-gradient(circle, rgba(74,222,128,0.16), transparent 70%); bottom: -160px; right: -100px; animation: float 11s ease-in-out infinite reverse; }
+
+    .confetti {
+      position: fixed; top: 0; width: 10px; height: 16px; opacity: 0.85; z-index: 1; border-radius: 2px;
+      animation: confetti-fall linear infinite;
+    }
+
+    .container {
+      position: relative; z-index: 5;
+      max-width: 640px; width: 100%;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--bg3), var(--bg2));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 48px 40px;
+      text-align: center;
+      box-shadow: 0 30px 90px rgba(0,0,0,0.5);
+    }
+
+    .check-circle {
+      width: 84px; height: 84px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--green), #22c55e);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 28px;
+      animation: pulse-ring 2.4s infinite;
+      font-size: 40px;
+    }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(74,222,128,0.12); border: 1px solid rgba(74,222,128,0.3);
+      color: var(--green); font-size: 12px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 7px 16px; border-radius: 100px; margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 5vw, 38px);
+      font-weight: 800; letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    h1 span {
+      background: linear-gradient(90deg, var(--purple-light), var(--pink), var(--purple-light));
+      background-size: 200% 100%;
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      animation: gradient-x 5s ease infinite;
+    }
+
+    .subtitle { color: var(--muted); font-size: 16px; max-width: 480px; margin: 0 auto 36px; }
+    .subtitle strong { color: var(--text); }
+
+    .steps {
+      text-align: left;
+      display: flex; flex-direction: column; gap: 14px;
+      margin-bottom: 32px;
+    }
+    .step {
+      display: flex; align-items: flex-start; gap: 16px;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      transition: border-color .2s, background .2s;
+    }
+    .step:hover { border-color: rgba(139,92,246,0.4); background: rgba(139,92,246,0.05); }
+    .step-num {
+      flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 15px; color: #fff;
+    }
+    .step-body h3 { font-size: 15.5px; font-weight: 700; margin-bottom: 4px; }
+    .step-body p { font-size: 13.5px; color: var(--muted); line-height: 1.55; }
+    .step-body a { color: var(--purple-light); font-weight: 600; text-decoration: underline; }
+
+    .cta-row { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 17px 28px; border-radius: 14px;
+      font-weight: 700; font-size: 15.5px; text-decoration: none;
+      transition: transform .15s ease, box-shadow .15s ease;
+      border: none; cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+      color: #fff;
+      box-shadow: 0 14px 40px rgba(139,92,246,0.35);
+    }
+    .btn-primary:hover { box-shadow: 0 18px 50px rgba(139,92,246,0.5); }
+    .btn-secondary {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-secondary:hover { border-color: rgba(139,92,246,0.4); }
+
+    .support {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      font-size: 13.5px; color: var(--muted);
+    }
+    .support strong { color: var(--purple-light); }
+    .support a { color: var(--purple-light); text-decoration: none; }
+
+    .seal {
+      margin-top: 24px;
+      font-size: 11px; color: #4b4a63; line-height: 1.7;
+    }
+
+    @media (max-width: 540px) {
+      .card { padding: 36px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+
+  <!-- Confetti gerado via JS -->
+
+  <div class="container">
+    <div class="card">
+      <div class="check-circle">✅</div>
+
+      <div class="eyebrow">
+        <span>●</span> Compra confirmada
+      </div>
+
+      <h1>Parabéns! Seu <span>FluxIA Copy Pack</span> está liberado 🎉</h1>
+      <p class="subtitle">
+        Você acaba de dar um baita passo para <strong>nunca mais travar na hora de escrever</strong>.
+        Seus 77 prompts + 5 Mega Prompts já estão disponíveis na sua área de membros.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h3>Acesse sua Área de Membros Kiwify</h3>
+            <p>Você recebeu um email da Kiwify com seu login de acesso. Não encontrou? Confira a caixa de spam ou <a href="https://dashboard.kiwify.com.br/" target="_blank" rel="noopener">clique aqui para acessar</a>.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h3>Abra o arquivo "README — Abra Primeiro"</h3>
+            <p>Ele te mostra exatamente como descompactar e organizar os arquivos — leva menos de 2 minutos.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h3>Copie, cole no Claude e gere sua copy</h3>
+            <p>Escolha o prompt da categoria que precisa → cole no <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> → preencha os [COLCHETES] → pronto. Copy profissional em segundos.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://dashboard.kiwify.com.br/" target="_blank" rel="noopener">
+          🚀 Acessar minha Área de Membros
+        </a>
+        <a class="btn btn-secondary" href="mailto:sscdigitalcontato@gmail.com">
+          💬 Falar com o suporte
+        </a>
+      </div>
+
+      <div class="support">
+        Alguma dúvida sobre o acesso ou como usar os prompts?<br>
+        Fale com a gente: <strong><a href="mailto:sscdigitalcontato@gmail.com">sscdigitalcontato@gmail.com</a></strong> — respondemos em até 24h.
+      </div>
+
+      <div class="seal">
+        🔐 FluxIA Copy Pack v1.0 — © 2026 SSCDigital · Uso pessoal e comercial autorizado ao comprador.<br>
+        Proibida revenda ou distribuição não autorizada · Lei 9.610/98
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Confete leve só na primeira visualização — celebração sutil, sem pesar a página
+    (function () {
+      const colors = ['#8b5cf6', '#a78bfa', '#ec4899', '#4ade80', '#f1f0ff'];
+      const total = 26;
+      for (let i = 0; i < total; i++) {
+        const c = document.createElement('div');
+        c.className = 'confetti';
+        c.style.left = Math.random() * 100 + 'vw';
+        c.style.background = colors[i % colors.length];
+        c.style.animationDuration = (4 + Math.random() * 3) + 's';
+        c.style.animationDelay = (Math.random() * 2) + 's';
+        c.style.transform = `rotate(${Math.random() * 360}deg)`;
+        document.body.appendChild(c);
+        setTimeout(() => c.remove(), 9000);
+      }
+    })();
+  </script>
+</body>
+</html>
